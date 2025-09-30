@@ -1,0 +1,85 @@
+{
+  "logo": {
+    "source": "/home/Rolando/Wallpapers/Arch-linux-logo.png",
+    "type": "kitty",
+    "padding": { "right": 2, "left": 2, "top": 2 },
+    "width": 32
+  },
+
+  "display": {
+    "separator": "  "
+  },
+
+  "modules": [
+    // Important: force a new column so the box and its contents appear to the right of the logo
+    { "type": "break" },
+
+    // Top box - apertura
+    {
+      "type": "custom",
+      "text": "┌──────────────────────────────────────────────────────────┐"
+    },
+
+    // Contenido dentro de la caja (usa padding.left consistente)
+    { "type": "os",       "key": "󰣇  OS",           "keyColor": "red",     "padding": { "left": 4 }, "margin": { "left": 2 } },
+    { "type": "kernel",   "key": "  Kernel",       "keyColor": "yellow",  "padding": { "left": 4 } },
+    { "type": "packages", "key": "󰏓  Packages",     "keyColor": "magenta",
+      "pacman": true, "flatpak": true, "showTypes": true, "padding": { "left": 4 }
+    },
+    { "type": "shell",    "key": "  Shell",        "keyColor": "white",   "version": true, "padding": { "left": 4 } },
+    { "type": "display",  "key": "󰍹  Display",      "keyColor": "green",
+      "resolutions": "detailed", "refreshRate": true, "padding": { "left": 4 }
+    },
+    { "type": "de",       "key": "DE",              "keyColor": "white",   "padding": { "left": 4 } },
+    { "type": "wm",       "key": "  WM",           "keyColor": "cyan",    "padding": { "left": 4 } },
+    { "type": "terminal", "key": "  Terminal",     "keyColor": "white",   "padding": { "left": 4 } },
+    { "type": "terminalfont", "key": "  Terminal Font", "keyColor": "white", "padding": { "left": 4 } },
+
+        { "type": "break" },
+
+    // Título con usuario@host (dentro de la caja)
+    {
+      "type": "title",
+      "key": " ",
+      "format": "",
+      "color": { "foreground": "cyan" },
+      "padding": { "left": 4 }
+    },
+
+    // Contenido segunda caja
+    { "type": "cpu", "key": "  CPU", "keyColor": "blue", "padding": { "left": 4 } },
+    { "type": "gpu", "key": "󰒆  GPU", "keyColor": "yellow", "driver": true, "vendor": true, "padding": { "left": 4 } },
+
+    {
+      "type": "memory",
+      "key": "  Memory",
+      "keyColor": "magenta",
+      "unit": "GiB",
+      "format": "{used} / {total} ({percentage})",
+      "bar": { "width": 30, "elapsedChar": "█", "totalChar": "░" },
+      "padding": { "left": 4 }
+    },
+
+    {
+      "type": "swap",
+      "key": "󰓡  Swap",
+      "keyColor": "white",
+      "unit": "GiB",
+      //"format": "{used} / {total} ({percentage})",
+      "padding": { "left": 4 }
+    },
+
+    {
+      "type": "disk",
+      "key": "  Disk",
+      "keyColor": "white",
+      "folders": ["/home"],
+      "unit": "GiB",
+      //"format": "{used} / {total} ({percentage})",
+      "padding": { "left": 4 }
+    },
+
+    // Paleta de colores dentro de la caja
+    { "type": "colors", "symbol": "circle", "padding": { "left": 4 } },
+  ]
+}

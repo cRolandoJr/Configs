@@ -1,0 +1,28 @@
+
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+alias code="code --password-store=\"gnome-libsecret\""
+
+# SSH Agent configuration
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval $(ssh-agent -s) > /dev/null
+    ssh-add ~/.ssh/id_ed25519 2>/dev/null
+fi
+export PATH=$PATH:$HOME/go/bin
+HISTCONTROL=ignoreboth
+HISTTIMEFORMAT="%d/%m/%y %T"
+
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+alias icat='kitten icat'
+alias s='kitten ssh'
+
+export LANG=es_VE.UTF-8
+
+# Created by `pipx` on 2025-09-25 16:26:49
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
