@@ -1,6 +1,6 @@
 # Configs
 
-Personal configuration files for Hyprland, Waybar, Kitty, Zsh, and Neovim.
+Personal configuration files for Hyprland, Waybar, Kitty, Zsh, Neovim and Rofi.
 
 ## Contents
 
